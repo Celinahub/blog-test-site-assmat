@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  
+ 
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Contacter et localiser Celine Hubert.">
+    <meta name="keywords" content="map, formulaire de contact">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Celine Hubert">
+
+    <meta property="og:title" content="Céline Hubert, assistante maternelle agréée près de chez vous">
+    <meta property="og:description" content="Contacter Céline Hubert et localiser le lieu d'accueil">
+    <meta property="og:image" content="contact-celine-assistante-maternelle.jpg"> <!-- Lien vers une image représentative -->
+    <meta property="og:url" content="https://chubert91assmat.netlify.app/contact"> <!-- URL de votre site -->
+ 
+
+     
+    <title>Contacter Céline Hubert - Assistante Maternelle Agréée à Brétigny-sur-Orge</title>
+    <link rel="canonical" href="https://chubert91assmat.netlify.app/contact">
+	
+	
+     <!-- Lien Bootstrap CSS (version 5) -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Finger+Paint:wght@400&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900&display=swap" rel="stylesheet">
+ 
+ 
+     <link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Styles personnalisés -->
+<link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles for this template -->
+
+   
+  </head>
+  <body class="bg-white contact">
+
+    <nav class="navbar navbar-dark custom-navbar sticky-top navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo à gauche -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/navbar/logo-navbar-paint.png" alt="Céline Hubert logo ch" class="navbar-logo">
+                
+            </a>
+
+        <!-- Bouton de bascule pour le menu mobile -->
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon" style="background-color: #07060a; filter: invert(100%);"></span>
+		</button>
+		
+		
+		 
+
+        <!-- Liens de navigation à droite -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- Ajoutez le style directement dans vos balises <a> pour chaque élément de menu -->
+<li class="nav-item">
+    <a class="nav-link d-flex align-items-center" href="index.html" style="height: 100%;">
+        
+        <span class="poppins-regular-nav-link">PRESENTATION</span>
+    </a>
+</li>
+   
+               
+                     
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="projet-accueil.html" style="height: 100%;">
+                        
+                        <span class="poppins-regular-nav-link">PROJET D'ACCUEIL</span>
+                    </a>
+                </li>
+                   
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="faq.html" style="height: 100%;">
+                        
+                        <span class="poppins-regular-nav-link">FAQ</span>
+                    </a>
+                </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="contact.html" style="height: 100%;">
+                       
+                        <span class="poppins-regular-nav-link">CONTACT</span>
+                    </a>
+                </li>
+<!-- Ajoutez d'autres icônes pour les autres liens de navigation -->
+
+                <!-- Ajoutez d'autres liens de navigation ici -->
+            </ul>
+        </div>
+    </div>
+  
+    
+</nav>
+
+
+ 
+
+
+<!-- Section de la rubrique LOCALISATION -->
+<section id="contact" class="container-fluid-contact py-5"> <!-- Utilisation de container-fluid -->
+    <div class="text-center"> <!-- Retrait de la div supplémentaire -->
+<!-- Ajout d'un titre pour la section -->
+<h2 class="heading-contact">Me contacter</h2>
+
+        <!-- SVG qui doit être placé au-dessus de la carte -->
+ <img src="images/contact/map-top.svg" class="map-top-curvy" alt="Décor nuages haut page">
+        <!-- Contenu de la section -->
+        <div class="row-contact justify-content-center align-items-center"> <!-- Centrer le contenu -->
+            <div class="col-md-12-contact"> <!-- Largeur complète -->
+
+
+
+                <div class="contact-form section-wrapper">
+                  
+                    <div class="leaflet-container">
+                        <!-- Carte Leaflet -->
+                        <div id="map"></div>
+                        <!-- Image SVG -->
+                        <img src="images/contact/map-nuages.svg" class="map-curvy" alt="Décor nuages carte">
+                    </div>
+                    
+                 
+                    <!-- Autres éléments de la section -->
+                    <img src="images/contact/me-contacter.svg" class="contact-curvy" alt="Décor nuages haut formulaire">
+                    <!-- Contenu du formulaire -->
+                    <div class="label-form section-wrapper">
+                        <div class="contact-text">
+                            <p class="contact-label">ME CONTACTER</p> 
+                            <p class="fade-in-out-contact">C'est avec plaisir que j'échangerai avec vous ...</p>
+                            <div class="contact-spacer"></div>
+                            <!-- Formulaire -->
+                            <form name="contact" method="POST" data-netlify="true">
+                                <input type="hidden" name="form-name" value="contact" />
+                                <div class="row g-3">
+                                  <div class="col-md-6 form-group">
+                                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" required autocomplete="off">
+                                    <label class="floating-label" for="prenom">Prénom</label>
+                                  </div>
+                                  <div class="col-md-6 form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder=" " required>
+                                    <label class="floating-label" for="email">E-mail</label>
+                                  </div>
+                                  <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" id="message" name="message" placeholder=" " required>
+                                    <label class="floating-label" for="message">Message</label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-1">
+                                    <button type="submit" class="btn btn-custom">
+                                      <img src="images/contact/car-police-security-svgrepo-com.svg" class="car-send" alt="Envoyer">
+                                    </button>
+                                  </div>
+                                </div>
+                              </form>
+                              
+                            
+                        </div>
+                    </div>
+                    <img src="images/contact/me-contacter-form.svg" class="contact-curvy" alt="Décor nuages bas du formulaire">
+                </div>
+                
+            </div>
+           
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<div class="striped-section">
+    <!-- Contenu de la section -->
+    <p>Cette section avec un fond rayé décoratif facilite l’accès aux informations de contact et reflète le professionnalisme de mon service d’assistante maternelle à Brétigny-sur-Orge.</p>
+ </div>
+
+
+ <!-- Pied de page -->
+<section class="contact-footer-section">
+    <h2 class="titre-footer">Pied de Page - Contact de Céline Hubert, assistante maternelle à Brétigny-sur-Orge</h2>
+        <div class="container-fluid"> <!-- Changer container à container-fluid -->
+            <div class="row">
+                <!-- Colonne de gauche: Horaires d'accueil -->
+                <div class="col-md-3 col-sm-12 text-center text-md-start pied-page-typo">
+                    <h3>Horaires d'accueil</h3>
+                    <p>Lundi 07h15 - 18h45</p>
+                    <p>Mardi 07h15 - 18h45</p>
+                    <p><strong>Mercredi - Fermé</strong></p>
+                    <p>Jeudi 07h15 - 18h45</p>
+                    <p>Vendredi 07h15 - 18h45</p>
+                </div>
+               
+                <!-- Colonne du milieu gauche: Liens utiles -->
+                <div class="col-md-3 col-sm-12 text-center liens-utiles-typo align-center">
+                    <h3>Liens utiles</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html">
+                                <img src="images/pied-page/liens-icon-bretigny.svg" class="icone-liens" alt="Icône flèche pour retourner à la page d'accueil de Brétigny-sur-Orge" loading="lazy">
+                                Présentation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="projet-accueil.html">
+                                <img src="images/pied-page/liens-icon-bretigny.svg" class="icone-liens" alt="Icône flèche pour retourner à la page d'accueil de Brétigny-sur-Orge" loading="lazy">
+                                Projet d'accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faq.html">
+                                <img src="images/pied-page/liens-icon-bretigny.svg" class="icone-liens" alt="Icône flèche pour retourner à la page FAQ sur l'accueil de Brétigny-sur-Orge" loading="lazy">
+                                Foire aux questions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" style="display: flex; align-items: center;">
+                                <img src="images/pied-page/liens-icon-contact-bretigny.svg" class="love-letter" alt="Icône lettre pour accéder à la page de contact à Brétigny-sur-Orge" style="margin-right: 5px;" loading="lazy">
+                                <div id="emailContainer"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="pied-page-spacer"></div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="mentions-legales.html">
+                                <img src="images/pied-page/liens-icon-bretigny.svg" class="icone-liens" alt="Icône flèche pour revenir aux mentions légales sur Brétigny-sur-Orge" loading="lazy">
+                                Mentions légales
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        
+    
+    <!-- Colonne du milieu droite: Réseaux sociaux -->
+    <div class="col-md-3 col-sm-12 text-center liens-utiles-typo">
+        <h3>Réseaux sociaux</h3>
+        <ul class="list-unstyled">
+            <li>
+                <a href="https://www.instagram.com/chez.celine.assmat.bretigny91?utm_source=qr&igsh=MWU3a2xmOHZwMjNwMA==" target="_blank">
+                    <img src="images/pied-page/social-insta-bretigny.svg" class="social-icons" alt="Instagram de Céline Hubert, assistante maternelle à Brétigny-sur-Orge" loading="lazy">
+                </a>
+           
+                <a href="https://www.facebook.com/profile.php?id=100092426056348" target="_blank">
+                    <img src="images/pied-page/social-facebook-bretigny.svg" class="social-icons" alt="Page Facebook de Céline Hubert, assistante maternelle à Brétigny-sur-Orge" loading="lazy">
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    
+                
+                <!-- Colonne de droite: Logo -->
+                <div class="col-md-3 col-sm-12 text-center text-md-end">
+                    <img src="images/pied-page/logo-footer-chez-celine-bretigny.svg" class="logo-pied-page" alt="Logo page index de Céline Hubert, assistante maternelle agréée à Brétigny-sur-Orge" loading="lazy">
+                </div>
+            </div>
+            
+            <hr class="pied-page-separator">
+    
+    
+            <!-- Contenu existant -->
+            <div class="row">
+                <div class="col-md-12 text-center footer-text">
+                    <span>© 2024 Céline Hubert &nbsp;&nbsp;</span>
+                    <span>Conçu avec </span>
+                    <a>
+                        <img src="images/pied-page/coeur-assistante-maternelle-bretigny.svg" alt="Icône cœur page représentant l'amour et l'engagement de Céline Hubert, assistante maternelle à Brétigny-sur-Orge, pour son travail" class="heart-icon" loading="lazy">
+                    </a>
+                    <span> par Céline Hubert</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+ 
+<!-- Charger Leaflet -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> <!-- Charger sans defer -->
+
+
+
+<!-- Initialisation de la carte Leaflet -->
+<script>
+
+    // Script 1 carte
+
+	document.addEventListener('DOMContentLoaded', function() {
+		// Utiliser les nouvelles coordonnées pour centrer la carte
+		var lat = 48.60744467870966; // Latitude pour emplacement 
+		var lng = 2.299350436793167;  // Longitude
+	
+		// Créer la carte centrée sur le lieu souhaité
+		var map = L.map('map').setView([lat, lng], 13);
+	
+		// Ajouter la couche de tuiles (OpenStreetMap)
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+		}).addTo(map);
+	
+		// Ajouter un marqueur à l'emplacement souhaité
+		var marker = L.marker([lat, lng]).addTo(map);
+		marker.bindPopup("SECTEUR CAROUGE-CLAUSE, Brétigny-sur-Orge").openPopup(); // Popup d'information
+	
+		// Ajouter un cercle pour délimiter un secteur autour du marqueur
+		var circle = L.circle([lat, lng], {
+			color: '#9786BD',       // Couleur de la bordure du cercle
+			fillColor: '#9786BD',  // Couleur de remplissage
+			fillOpacity: 0.2,   // Opacité du remplissage
+			radius: 200        // Rayon du cercle en mètres
+		}).addTo(map);
+	});
+
+
+
+// Script 2 mail pied de page
+
+// Création de l'adresse e-mail
+var a = "chubert.assmat91";
+    var b = "yahoo.com";
+    var c = a + "@" + b;
+
+    // Sélection de l'élément où vous souhaitez ajouter le lien e-mail
+    var container = document.getElementById('emailContainer');
+
+    // Création de l'élément <a> pour le lien e-mail
+    var emailLink = document.createElement("a");
+    emailLink.href = "mailto:" + c;
+    emailLink.style.color = "#F8F9F6";
+    emailLink.style.textDecoration = "none";
+    emailLink.style.marginLeft = "10px";
+
+    // Création du texte à afficher dans le lien e-mail
+    var emailText = document.createTextNode(c);
+
+    // Ajout du texte à l'élément <a>
+    emailLink.appendChild(emailText);
+
+    // Ajout du lien e-mail à l'élément container
+    container.appendChild(emailLink);
+
+
+
+	</script>
+	
+	
+
+<!-- Charger d'autres scripts avec defer pour qu'ils ne bloquent pas le rendu de la page -->
+<script src="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    
+
+</body>
+</html>
