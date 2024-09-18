@@ -1,5 +1,5 @@
 backend:
-  name: gitub
+  name: github
   repo: blog-test-site-assmat
 
   branch: main  # ou master, selon la branche principale de ton dépôt
