@@ -1,0 +1,85 @@
+/* Style général pour le corps de la page */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa; /* Couleur de fond claire */
+    color: #333; /* Couleur de texte par défaut */
+    line-height: 1.6;
+    padding-top: 20px;
+  }
+  
+  /* En-tête du blog */
+  .blog-header {
+    background-color: #343a40; /* Couleur de fond de l'en-tête */
+    padding: 20px 0;
+    margin-bottom: 30px;
+  }
+  
+  .blog-header .blog-header-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* Style des articles du blog */
+  .blog-post {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef; /* Ligne séparatrice entre les articles */
+  }
+  
+  .blog-post-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .blog-post-meta {
+    color: #6c757d; /* Couleur de texte pour la métadonnée */
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Style de la barre latérale */
+  .bg-light {
+    background-color: #f8f9fa !important;
+    border: 1px solid #e9ecef;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 0.25rem; /* Coins arrondis */
+  }
+  
+  .sidebar h4 {
+    font-weight: bold;
+  }
+  
+  /* Style des liens */
+  a {
+    color: #007bff; /* Couleur de lien par défaut */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #0056b3; /* Couleur de lien au survol */
+    text-decoration: underline;
+  }
+  
+  /* Style du pied de page */
+  .blog-footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  /* Media queries pour responsive */
+  @media (max-width: 768px) {
+    .blog-header-logo {
+      font-size: 1.5rem;
+    }
+    .blog-post-title {
+      font-size: 1.5rem;
+    }
+  }
+  

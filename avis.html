@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  
+ 
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Contacter et localiser Celine Hubert.">
+    <meta name="keywords" content="map, formulaire de contact">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Celine Hubert">
+
+    <meta property="og:title" content="Céline Hubert, assistante maternelle agréée près de chez vous">
+    <meta property="og:description" content="Contacter Céline Hubert et localiser le lieu d'accueil">
+    <meta property="og:image" content="contact-celine-assistante-maternelle.jpg"> <!-- Lien vers une image représentative -->
+    <meta property="og:url" content="https://chubert91assmat.netlify.app/contact"> <!-- URL de votre site -->
+ 
+
+     
+    <title>Avis chez Céline Hubert - Assistante Maternelle Agréée à Brétigny-sur-Orge</title>
+    <link rel="canonical" href="https://chubert91assmat.netlify.app/contact">
+	
+	
+     <!-- Lien Bootstrap CSS (version 5) -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Finger+Paint:wght@400&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900&display=swap" rel="stylesheet">
+ 
+ 
+     <link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Styles personnalisés -->
+<link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles for this template -->
+
+   
+  </head>
+  <body class="bg-white avis">
+
+    <nav class="navbar navbar-dark custom-navbar sticky-top navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo à gauche -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/navbar/logo-navbar-paint.png" alt="Céline Hubert logo ch" class="navbar-logo">
+                
+            </a>
+
+        <!-- Bouton de bascule pour le menu mobile -->
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon" style="background-color: #07060a; filter: invert(100%);"></span>
+		</button>
+		
+		
+		 
+
+        <!-- Liens de navigation à droite -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- Ajoutez le style directement dans vos balises <a> pour chaque élément de menu -->
+<li class="nav-item">
+    <a class="nav-link d-flex align-items-center" href="index.html" style="height: 100%;">
+        
+        <span class="poppins-regular-nav-link">PRESENTATION</span>
+    </a>
+</li>
+   
+               
+                     
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="projet-accueil.html" style="height: 100%;">
+                        
+                        <span class="poppins-regular-nav-link">PROJET D'ACCUEIL</span>
+                    </a>
+                </li>
+                   
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="faq.html" style="height: 100%;">
+                        
+                        <span class="poppins-regular-nav-link">FAQ</span>
+                    </a>
+                </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="contact.html" style="height: 100%;">
+                       
+                        <span class="poppins-regular-nav-link">CONTACT</span>
+                    </a>
+                </li>
+<!-- Ajoutez d'autres icônes pour les autres liens de navigation -->
+
+                <!-- Ajoutez d'autres liens de navigation ici -->
+            </ul>
+        </div>
+    </div>
+  
+    
+</nav>
+
+
+ 
+
+
+<section id="avis" class="container-fluid-avis py-5">
+    <div class="text-center">
+        <h2 class="heading-avis">Temoignages</h2>
+       
+
+<!-- Image plus grande pour les écrans de bureau -->
+<img src="images/avis/avis-top-large.svg" class="avis-top-curvy desktop-image" alt="Décor nuages haut page">
+<!-- Image plus petite pour les écrans mobiles -->
+<img src="images/avis/avis-top-small.svg" class="avis-top-curvy mobile-image" alt="Décor nuages haut page">
+
+        
+        <div class="row-avis justify-content-center align-items-center">
+            <div class="col-md-12-avis">
+                <div class="avis-form section-wrapper">
+                    <div class="avis-container">
+
+                        
+
+                        <!-- Section Témoignages -->
+                        <div class="testimonial-section">
+
+
+                            <p class="poppins-bold-temoignage-title">VOS TEMOIGNAGES</p>
+                            <!-- Texte qui apparaît et disparaît en boucle -->
+                            <p class="fade-in-out-temoignage">comptent énormément pour moi !</p>
+
+        
+        <div class="avis-spacer"></div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="testimonial">
+                                        <p><strong>Nom :</strong> John Doe</p>
+                                        <p>"Ce service est fantastique!"</p>
+                                        <div class="rating">
+                                            <img src="images/avis/star-pirate-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                            <img src="images/avis/star-tetine-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                            <img src="images/avis/star-moustache-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="testimonial">
+                                        <p><strong>Nom :</strong> Jane Doe</p>
+                                        <p>"Excellent travail, je recommande!"</p>
+                                        <div class="rating">
+                                            <img src="images/avis/star-pirate-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                            <img src="images/avis/star-tetine-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="testimonial">
+                                        <p><strong>Nom :</strong> Jim Doe</p>
+                                        <p>"Une expérience agréable!"</p>
+                                        <div class="rating">
+                                            <img src="images/avis/star-pirate-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                            <img src="images/avis/star-tetine-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                            <img src="images/avis/star-moustache-svgrepo-com.svg" class="stars-icon" alt="Étoile">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="avis-spacer"></div>
+                            </div>
+                        </div>
+                        <!-- Fin de la Section Témoignages -->
+
+                    </div>
+                    
+                    <!-- Autres éléments de la section -->
+<div class="text-center-avis">
+    <!-- Image plus grande pour les écrans de bureau -->
+    <img src="images/avis/exprimez-vous-top-form-large.svg" class="avis-curvy desktop-image" alt="Décor nuages haut formulaire">
+<!-- Image plus petite pour les écrans mobiles -->
+<img src="images/avis/exprimez-vous-top-form-small.svg" class="avis-curvy mobile-image" alt="Décor nuages haut formulaire">
+</div>
+
+<div class="label-form-avis section-wrapper text-center-avis">
+    <div class="avis-text">
+        <p class="avis-label">EXPRIMEZ-VOUS !</p>
+        <p class="fade-in-out-avis">Vos témoignages sont précieux.</p>
+        <div class="avis-spacer"></div>
+
+<!-- Phrase avant le formulaire -->
+<p class="add-space-bottom-avis">Merci de partager votre expérience sur ma page établissement Google <a href="https://g.page/r/CQsVBcwjVgVtEAE/review" target="_blank" class="styled-link-avis">ici !</a> Vous ne voulez pas créer de compte, veuillez remplir le formulaire ci-dessous :</p>
+
+<p class="poppins-regular-avis">Répondre aux besoins sur-mesure des familles est ma priorité. Vos retours sont essentiels pour continuer à améliorer mon projet d'accueil. Je vous invite à partager votre expérience. Vos témoignages renforcent non seulement mon engagement envers la qualité de l'accueil, mais ils offrent également des repères précieux aux futurs parents en quête du mode de garde idéal.</p>
+<p class="poppins-regular-avis">Merci de consacrer une petite minute pour remplir ce formulaire.</p>
+
+
+
+                       
+        <!-- Note globale -->
+<div class="col-md-12 form-group-avis">
+    <label><strong>Comment évaluez-vous l'accueil chez Céline :</strong></label>
+    <div id="rating">
+        <input type="radio" id="rating-1" name="rating" value="1" required>
+        <label for="rating-1">1 étoile</label>
+        <input type="radio" id="rating-2" name="rating" value="2">
+        <label for="rating-2">2 étoiles</label>
+        <input type="radio" id="rating-3" name="rating" value="3">
+        <label for="rating-3">3 étoiles</label>
+        <input type="radio" id="rating-4" name="rating" value="4">
+        <label for="rating-4">4 étoiles</label>
+        <input type="radio" id="rating-5" name="rating" value="5">
+        <label for="rating-5">5 étoiles</label>
+    </div>
+</div>
+
+
+     <!-- Formulaire -->
+     <form name="avis" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="avis" />
+        <div class="row g-3 justify-content-center text-center">
+
+        <!-- Nom ou Pseudo -->
+        <div class="col-md-10 form-group">
+            <input type="text" class="form-control-avis" id="prenom" name="prenom" placeholder="Prénom" required autocomplete="off">
+            <label class="floating-label-avis" for="prenom">Nom ou Pseudo</label>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-10 form-group">
+            <input type="email" class="form-control-avis" id="email" name="email" placeholder=" " required>
+            <label class="floating-label-avis" for="email">Email (ne sera pas publié)</label>
+        </div>
+
+        <!-- Année d'accueil et Recommandation (côte à côte) -->
+        <div class="col-md-10 form-group">
+            <input type="text" class="form-control-avis" id="year" name="year" placeholder=" " required>
+            <label class="floating-label-avis" for="year">Date et durée de l'accueil</label>
+            
+        </div>
+
+        <div class="col-md-10 form-group">
+            <input type="text" class="form-control-avis" id="age" name="age" placeholder=" " required>
+            <label class="floating-label-avis" for="age">Âge de l'enfant lors de l'accueil</label>
+            
+        </div>
+
+        <div class="col-md-10 form-group">
+            <input type="text" class="form-control-avis" id="besoin" name="besoin" placeholder=" " required>
+            <label class="floating-label-avis" for="besoin">L'accueil individuel a-t-il répondu à vos besoins ?</label>
+            
+        </div>
+
+
+        <!-- Message -->
+        <div class="col-md-10 form-group">
+            <input type="text" class="form-control-avis" id="message" name="message" placeholder=" " required>
+            <label class="floating-label-avis" for="message">Points forts et améliorations</label>
+        </div>
+
+       <!-- Consentement -->
+<div class="col-md-10 form-group">
+    <label class="consent-label">
+        <input type="checkbox" name="consent" required>
+        Je consens à ce que mon avis soit publié sur ce site. J'accepte que mon nom ou pseudo soit affiché avec mon témoignage. Votre email est collecté uniquement pour des raisons de suivi et ne sera jamais partagé ni affiché publiquement.
+    </label>
+</div>
+
+
+    <!-- Bouton de soumission centré -->
+    <div class="row justify-content-center">
+        <div class="col-md-1 d-flex justify-content-center">
+            <button type="submit" class="btn btn-custom">
+                <img src="images/avis/baby-nipple.svg" class="car-send" alt="Envoyer">
+            </button>
+        </div>
+    </div>
+</div>
+</form>
+
+
+
+</div>
+                        </div>
+                       
+
+
+<!-- Image plus grande pour les écrans de bureau -->
+<img src="images/avis/temoignage-form-large.svg" class="avis-bottom-curvy desktop-image" alt="Décor nuages haut formulaire">
+<!-- Image plus petite pour les écrans mobiles -->
+<img src="images/avis/temoignage-form-small.svg" class="avis-curvy mobile-image" alt="Décor nuages haut formulaire">
+
+
+                    </div>
+                    
+                </div>
+            </div>
+      
+        
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<div class="striped-section">
+    <!-- Contenu de la section -->
+    <p>Cette section a un arrière-plan rayé.</p>
+ </div>
+
+
+ <!-- Pied de page -->
+<section class="custom-footer-section">
+    <div class="container-fluid"> <!-- Changer container à container-fluid -->
+        <div class="row">
+            <!-- Colonne de gauche: Horaires d'accueil -->
+            <div class="col-md-3 col-sm-12 text-center text-md-start pied-page-typo">
+                <h4>Horaires d'accueil</h4>
+                <p>Lundi 07h15 - 18h45</p>
+                <p>Mardi 07h15 - 18h45</p>
+                <p><strong>Mercredi - Fermé</strong></p>
+                <p>Jeudi 07h15 - 18h45</p>
+                <p>Vendredi 07h15 - 18h45</p>
+            </div>
+           
+            <!-- Colonne du milieu gauche: Liens utiles -->
+            <div class="col-md-3 col-sm-12 text-center liens-utiles-typo align-center">
+                <h4>Liens utiles</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="index.html">
+                            <img src="images/pied-page/arrow-pied-page-svgrepo-com.svg" class="icone-liens" alt="Arrow" loading="lazy">
+                            Présentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projet-accueil.html">
+                            <img src="images/pied-page/arrow-pied-page-svgrepo-com.svg" class="icone-liens" alt="Arrow" loading="lazy">
+                            Projet d'accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faq.html">
+                            <img src="images/pied-page/arrow-pied-page-svgrepo-com.svg" class="icone-liens" alt="Arrow" loading="lazy">
+                            Foire aux questions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" style="display: flex; align-items: center;">
+                            <img src="images/pied-page/love-letter-svgrepo-com.svg" class="love-letter" alt="Arrow" style="margin-right: 5px;" loading="lazy">
+                            <div id="emailContainer"></div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="pied-page-spacer"></div>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="mentions-legales.html">
+                            <img src="images/pied-page/arrow-pied-page-svgrepo-com.svg" class="icone-liens" alt="Arrow" loading="lazy">
+                            Mentions légales
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+
+<!-- Colonne du milieu droite: Réseaux sociaux -->
+<div class="col-md-3 col-sm-12 text-center liens-utiles-typo">
+    <h4>Réseaux sociaux</h4>
+    <ul class="list-unstyled">
+        <li>
+            <a href="https://www.instagram.com/chez.celine.assmat.bretigny91?utm_source=qr&igsh=MWU3a2xmOHZwMjNwMA==" target="_blank">
+                <img src="images/pied-page/social-insta-svgrepo-com.svg" class="social-icons" alt="Instagram" loading="lazy">
+            </a>
+       
+            <a href="https://www.facebook.com/profile.php?id=100092426056348" target="_blank">
+                <img src="images/pied-page/social-facebook-svgrepo-com.svg" class="social-icons" alt="Facebook" loading="lazy">
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+            
+            <!-- Colonne de droite: Logo -->
+            <div class="col-md-3 col-sm-12 text-center text-md-end">
+                <img src="images/pied-page/logo-navbar-paint-pied2.svg" class="logo-pied-page" alt="Logo" loading="lazy">
+            </div>
+        </div>
+        
+        <hr class="pied-page-separator">
+
+
+        <!-- Contenu existant -->
+        <div class="row">
+            <div class="col-md-12 text-center footer-text">
+                <span>© 2024 Céline Hubert &nbsp;&nbsp;</span>
+                <span>Conçu avec </span>
+                <a>
+                    <img src="images/heart-svgrepo-com.svg" alt="Coeur" class="heart-icon" loading="lazy">
+                </a>
+                <span> par Céline Hubert</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+ 
+
+
+
+
+<!-- Initialisation de la carte Leaflet -->
+<script>
+
+
+
+// Script 2 mail pied de page
+
+// Création de l'adresse e-mail
+var a = "chubert.assmat91";
+    var b = "yahoo.com";
+    var c = a + "@" + b;
+
+    // Sélection de l'élément où vous souhaitez ajouter le lien e-mail
+    var container = document.getElementById('emailContainer');
+
+    // Création de l'élément <a> pour le lien e-mail
+    var emailLink = document.createElement("a");
+    emailLink.href = "mailto:" + c;
+    emailLink.style.color = "#F8F9F6";
+    emailLink.style.textDecoration = "none";
+    emailLink.style.marginLeft = "10px";
+
+    // Création du texte à afficher dans le lien e-mail
+    var emailText = document.createTextNode(c);
+
+    // Ajout du texte à l'élément <a>
+    emailLink.appendChild(emailText);
+
+    // Ajout du lien e-mail à l'élément container
+    container.appendChild(emailLink);
+
+
+
+	</script>
+	
+	
+
+<!-- Charger d'autres scripts avec defer pour qu'ils ne bloquent pas le rendu de la page -->
+<script src="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    
+
+</body>
+</html>

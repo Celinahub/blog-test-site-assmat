@@ -2983,22 +2983,85 @@ position: relative; /* Ajout de position relative */
 
 
 
+/* Styles pour la page blog*/
 
 
+body.blog-page {
+   background: linear-gradient(to bottom, #98D1CA 5%, #F8F9F6 95%); /* Création du dégradé avec bande réglable */
+}
 
 
+.rubrique-frame {
+   position: relative;
+}
+
+.blog-bottom-curvy {
+   width: 100%; /* Utiliser 100% pour couvrir toute la largeur du conteneur parent */
+   height: auto; /* Assurer que l'image garde ses proportions */
+   margin: 0;
+   padding: 0;
+   display: block;
+}
+
+.blog-portrait {
+   position: absolute;
+   top: 60%; /* Ajuster la position verticale */
+   left: 50%; /* Centrer horizontalement */
+   transform: translate(-50%, -50%); /* Centrer complètement */
+   z-index: 2; /* S'assurer que l'image de Céline soit au-dessus de l'arrière-plan */
+   text-align: center; /* Centrer le texte et l'image */
+   width: 250px; /* Limiter la largeur du bloc */
+}
+
+@media (max-width: 768px) {
+   .blog-portrait {
+      width: 200px; /* taille photo */
+   }
+ }
 
 
+/* Styles spécifiques pour le champ de recherche */
+.search-form .search-input {
+   border-bottom: 1px solid #103754; /* Couleur différente pour le champ de recherche */
+   background-color: #F8F9F6; /* Conserve la couleur de fond même au focus */
+   color: #103754; /* Couleur du texte */
+   padding: 5px 10px; /* Ajuste le padding si nécessaire */
+   transition: border-color 0.2s ease; /* Transition pour le focus */
+}
 
+/* Conserve la couleur de fond lors du focus */
+.search-form .search-input:focus {
+   background-color: #F8F9F6; /* Empêche le fond de devenir blanc */
+   border-bottom-color: #103754; /* Couleur au focus spécifique au champ de recherche */
+   box-shadow: none; /* Pas d'ombre portée */
+}
 
+/* Changer la couleur du texte du placeholder */
+.search-form .search-input::placeholder {
+   color: #0e2e4c; /* Couleur spécifique pour le texte du placeholder ("Search") */
+}
 
+/* Styles personnalisés pour le bouton de recherche */
+.search-form .search-btn {
+   background-color: #103754; /* Couleur de fond du bouton */
+   color: #F8F9F6; /* Couleur du texte */
+   border: none; /* Pas de bordure */
+   padding: 5px 15px;
+   border-radius: 4px; /* Coins arrondis */
+   transition: background-color 0.2s ease;
+}
 
-
-
-
-
-
-
-
+/* Changer la couleur du bouton lors du survol */
+.search-form .search-btn:hover {
+   background-color: #0e2e4c; /* Couleur du bouton au survol */
+}
+/* Réduire la taille de l'image et la centrer */
+.card-img-portrait {
+   width: 60%; /* Réduire la taille de l'image à 80% de la largeur de la carte */
+   height: auto; /* Garde les proportions de l'image */
+   display: block; /* Pour centrer l'image */
+   margin: 20px auto 0; /* Ajoute une marge en haut, centre l'image */
+ }
+ 
 
 
