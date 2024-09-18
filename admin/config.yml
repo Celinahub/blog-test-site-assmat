@@ -1,23 +1,17 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main  # ou master, selon la branche principale de ton dépôt
 
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "images/uploads" # Où seront stockées les images
+public_folder: "/images/uploads" # Le chemin pour accéder aux images depuis l'interface web
 
 collections:
-  - name: "posts"
-    label: "Blog Posts"
-    folder: "_posts"
+  - name: "posts" # Le nom de la collection (ici "posts")
+    label: "Articles"
+    folder: "_posts" # Le dossier où les fichiers seront créés
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image", required: true }
-      - { label: "Card Text", name: "body", widget: "markdown" }
-      - { label: "Button Text", name: "button_text", widget: "string", default: "Read more" }
-      - { label: "Button Link", name: "button_link", widget: "string", default: "#" }
-
-
-- { label: "Category", name: "category", widget: "string", default: "General" }
-- { label: "Tags", name: "tags", widget: "list" }
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Modèle du nom de fichier
+    fields: # Les champs du formulaire CMS
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
