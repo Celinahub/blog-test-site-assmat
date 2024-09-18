@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: Celinahub/blog-test-site-assmat
+  name: git-gateway
   branch: main  # ou master, selon la branche principale de ton dépôt
 
 media_folder: "images/uploads" # Où seront stockées les images
