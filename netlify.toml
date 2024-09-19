@@ -1,7 +1,11 @@
-[build]
-  functions = "netlify/functions"
+  [build]
+  publish = "."  # Indique que les fichiers à publier sont à la racine du projet
+  functions = "netlify/functions"  # Répertoire des fonctions
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  from = "/api/posts"
+  to = "/.netlify/functions/posts"
   status = 200
+  force = true
+
+

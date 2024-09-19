@@ -1,34 +1,21 @@
-// netlify/functions/posts.js
-
 const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
 
 exports.handler = async (event) => {
+  const postsDir = path.join(process.cwd(), '_posts'); // Utilise process.cwd() pour accéder au répertoire racine du projet
+
   try {
-    const postsDir = path.join(process.cwd(), '_posts');
     const files = fs.readdirSync(postsDir);
-
-    const posts = files.map(file => {
-      const filePath = path.join(postsDir, file);
-      const content = fs.readFileSync(filePath, 'utf-8');
-      
-      const [metadata, body] = content.split('---').filter(Boolean);
-      const metadataLines = metadata.split('\n');
-      const postData = {};
-      metadataLines.forEach(line => {
-        const [key, value] = line.split(':');
-        if (key && value) {
-          postData[key.trim()] = value.trim();
-        }
+    const posts = files
+      .filter(file => file.endsWith('.md'))
+      .map(file => {
+        const content = fs.readFileSync(path.join(postsDir, file), 'utf8');
+        return {
+          filename: file,
+          content: marked(content),
+        };
       });
-
-      return {
-        ...postData,
-        body: marked(body.trim())
-      };
-    });
-
     return {
       statusCode: 200,
       body: JSON.stringify(posts),
