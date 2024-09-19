@@ -365,7 +365,7 @@
 
     try {
         // Charger la liste des articles
-        const response = await fetch('/posts.json');
+        const response = await fetch('/api/posts'); // Modifier ici
         if (!response.ok) {
             throw new Error(`Erreur HTTP ${response.status} - ${response.statusText}`);
         }
@@ -373,21 +373,10 @@
 
         // Charger et afficher chaque article
         for (let post of posts) {
-            try {
-                const markdownResponse = await fetch(`_posts/${post}`);
-                if (!markdownResponse.ok) {
-                    throw new Error(`Erreur HTTP ${markdownResponse.status} - ${markdownResponse.statusText}`);
-                }
-                const markdown = await markdownResponse.text();
-                const html = marked(markdown); // Convertir le markdown en HTML
-
-                const articleElement = document.createElement('div');
-                articleElement.classList.add('post');
-                articleElement.innerHTML = html;
-                postsContainer.appendChild(articleElement);
-            } catch (error) {
-                console.error(`Erreur lors du chargement du post ${post}:`, error);
-            }
+            const articleElement = document.createElement('div');
+            articleElement.classList.add('post');
+            articleElement.innerHTML = marked(post.content); // Utiliser le contenu directement
+            postsContainer.appendChild(articleElement);
         }
     } catch (error) {
         console.error('Erreur lors du chargement des articles:', error);
