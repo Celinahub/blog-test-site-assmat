@@ -373,9 +373,15 @@
 
         // Charger et afficher chaque article
         for (let post of posts) {
+            // Charger le contenu Markdown depuis le dossier _posts
+            const markdownResponse = await fetch(`_posts/${post.filename}`);
+            if (!markdownResponse.ok) {
+                throw new Error(`Erreur lors du chargement du fichier ${post.filename}: ${markdownResponse.status}`);
+            }
+            const markdown = await markdownResponse.text();
             const articleElement = document.createElement('div');
             articleElement.classList.add('post');
-            articleElement.innerHTML = marked(post.content); // Utiliser le contenu directement
+            articleElement.innerHTML = marked(markdown); // Convertir le markdown en HTML
             postsContainer.appendChild(articleElement);
         }
     } catch (error) {
@@ -384,6 +390,7 @@
 }
 
 document.addEventListener('DOMContentLoaded', loadPosts);
+
 
 
   </script>
