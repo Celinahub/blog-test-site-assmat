@@ -152,13 +152,8 @@
 
 
 
-<div class="container">
-  <h1 class="mt-5">Blog</h1>
-  <p class="lead">Derniers articles, conseils et mises à jour</p>
-  <div id="blog-posts" class="row">
-    <!-- Les articles de blog seront injectés ici -->
-  </div>
-</div>
+<h1>Blog</h1>
+<div id="posts-container"></div> <!-- Conteneur pour les articles -->
 
 
 
@@ -365,52 +360,39 @@
 
 
   <script>
- async function loadPosts() {
-    const postsContainer = document.getElementById('posts-container');
+   document.addEventListener('DOMContentLoaded', async function() {
+        const postsContainer = document.getElementById('posts-container');
+        
+        try {
+          // Charger la liste des articles
+          const response = await fetch('/posts.json');
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const posts = await response.json();
 
-    // Appeler la fonction Netlify pour obtenir la liste des fichiers Markdown
-    const response = await fetch('/.netlify/functions/list-posts');
-    const posts = await response.json(); // Obtenir la liste des fichiers .md
+          // Charger et afficher chaque article
+          for (let post of posts) {
+            try {
+              const markdownResponse = await fetch(`/posts/${post}`);
+              if (!markdownResponse.ok) {
+                throw new Error('Network response was not ok');
+              }
+              const markdown = await markdownResponse.text();
+              const html = marked(markdown); // Convertir le markdown en HTML
 
-    // Créer un tableau pour stocker les articles avec leur date de publication
-    const postsWithDate = await Promise.all(posts.map(async (post) => {
-        const response = await fetch(`_posts/${post}`);
-        const markdown = await response.text();
-        const html = marked(markdown);
-
-        // Extraire la date depuis le markdown (en supposant que la date est dans le front matter)
-        const match = markdown.match(/date: (.+)/);
-        const date = match ? new Date(match[1]) : new Date();
-
-        return { post, html, date };
-    }));
-
-    // Trier les articles par date, les plus récents en premier
-    postsWithDate.sort((a, b) => b.date - a.date);
-
-    // Sélectionner les 3 articles les plus récents
-    const recentPosts = postsWithDate.slice(0, 3);
-
-    // Afficher les articles récents
-    recentPosts.forEach(({ html }) => {
-        const articleElement = document.createElement('div');
-        articleElement.classList.add('post');
-        articleElement.innerHTML = html;
-        postsContainer.appendChild(articleElement);
-    });
-
-    // Ajouter un lien vers la page d'archive si plus de 3 articles sont disponibles
-    if (postsWithDate.length > 3) {
-        const seeMoreLink = document.createElement('a');
-        seeMoreLink.href = '/archive.html'; // Page d'archive
-        seeMoreLink.classList.add('btn', 'btn-secondary', 'mt-3');
-        seeMoreLink.textContent = 'Voir plus d\'articles';
-        postsContainer.appendChild(seeMoreLink);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", loadPosts);
-
+              const articleElement = document.createElement('div');
+              articleElement.classList.add('post');
+              articleElement.innerHTML = html;
+              postsContainer.appendChild(articleElement);
+            } catch (error) {
+              console.error('Erreur lors du chargement du post:', error);
+            }
+          }
+        } catch (error) {
+          console.error('Erreur lors du chargement des articles:', error);
+        }
+      });
 
   </script>
 
