@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive - Blog</title>
+    <!-- Inclure les styles de base de Netlify CMS -->
+    <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.css" />
+</head>
+<body>
+    <h1>Archives</h1>
+    <div id="posts-container" class="container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        async function loadPosts() {
+            const postsContainer = document.getElementById('posts-container');
+
+            // Appeler la fonction Netlify pour obtenir la liste des fichiers Markdown
+            const response = await fetch('/.netlify/functions/list-posts');
+            const posts = await response.json(); // Obtenir la liste des fichiers .md
+
+            // Créer un tableau pour stocker les articles avec leur date de publication
+            const postsWithDate = await Promise.all(posts.map(async (post) => {
+                const response = await fetch(`_posts/${post}`);
+                const markdown = await response.text();
+                const html = marked(markdown);
+
+                // Extraire la date depuis le markdown (en supposant que la date est dans le front matter)
+                const match = markdown.match(/date: (.+)/);
+                const date = match ? new Date(match[1]) : new Date();
+
+                return { post, html, date };
+            }));
+
+            // Trier les articles par date, les plus récents en premier
+            postsWithDate.sort((a, b) => b.date - a.date);
+
+            // Afficher tous les articles
+            postsWithDate.forEach(({ html }) => {
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('post');
+                articleElement.innerHTML = html;
+                postsContainer.appendChild(articleElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPosts);
+    </script>
+</body>
+</html>
